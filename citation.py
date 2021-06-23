@@ -1,9 +1,8 @@
 import ads
 class papers:
     
-    def __init__(self, username, affiliation, sort_by='year', authorship='first_author', filename='citation_list.txt'):
+    def __init__(self, username, sort_by='year', authorship='first_author', filename='citation_list.txt'):
         self.username = username
-        self.affiliation = affiliation
         self.sort_by = sort_by
         self.authorship = authorship
         self.filename = filename
@@ -76,6 +75,6 @@ class papers:
         cite_file.close()
 
 # Call to Functions -- Example
-author_obj = papers(username='Angelo, I.', affiliation='California Institute of Technology', sort_by='year', authorship='first_author')
+author_obj = papers(username='Angelo, I.', sort_by='year', authorship='first_author')
 author_obj.generate_citation()
 author_obj.write_citation()
