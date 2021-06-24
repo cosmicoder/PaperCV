@@ -1,5 +1,7 @@
 # PaperCV
 A easy-to-use tool to generate references for your academic CV in astronomy.
+#### Authors: Aniket Sanghi and Neev Shah
+#### Credit: Organizers of Code/Astro for the brilliant workshop that has led to the building and releasing of our first python package!
 
 ## Features
 Get formatted citation for all first author and nth author papers by a given author.
