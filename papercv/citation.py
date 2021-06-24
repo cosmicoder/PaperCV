@@ -1,3 +1,5 @@
+"""Class definition and Function to create citation file"""
+
 import ads
 class papers:
     
@@ -74,7 +76,20 @@ class papers:
 
         cite_file.close()
 
-# Call to Functions -- Example
-author_obj = papers(username='Angelo, I.', sort_by='year', authorship='first_author')
-author_obj.generate_citation()
-author_obj.write_citation()
+def create_citation_file(username, sort_by='year', authorship='first_author', filename='citation_list.txt'):
+    """Citation File Creation
+
+    Generate .txt file with paper titles and citations for given author name.
+
+    Args:
+        username (str): Name of author in 'Last Name, First Name/First Initial' format. E.g. 'Sanghi, Aniket' or 'Shah, N.'
+        sort_by (str): Sort the papers queried by either 'year' or 'citation_count'
+        authorship (str): Select either 'first_author' papers or 'nth_author' papers. 
+        filename (str): Filename for the .txt file with paper titles and citations. E.g. 'citation_list.txt'
+        
+    Returns:
+        citation file: .txt file with paper titles and citations.
+    """
+    author_obj = papers(username=username, sort_by=sort_by, authorship=authorship, filename=filename)
+    author_obj.generate_citation()
+    author_obj.write_citation()
