@@ -39,6 +39,7 @@ class papers:
 
         for index in range(len(self.paper_data)):
             
+            flag = 1
             citation_string = ''
             paper_title = self.paper_data[index].title[0]
             
@@ -57,10 +58,18 @@ class papers:
                         citation_string += split_name[0]+', '+split_last_name[1][0]+'. '+split_last_name[2][0]+'., '
                     else:
                         citation_string += split_name[0]+', '+split_last_name[1][0]+'., '
-
-                citation_string += self.paper_data[index].year+', '+self.paper_data[index].pub+', '+self.paper_data[index].volume+', '+self.paper_data[index].page[0]
-                paper_citations.append(citation_string)
-                paper_titles.append(paper_title)
+                    
+                    # For nth author
+                    if(i==0):
+                        if(self.authorship != 'first_author'):
+                            # -2 to exclude space and comma
+                            if self.username == citation_string[0:len(citation_string)-2]:
+                                flag = 0
+                                break
+                if(flag):
+                    citation_string += self.paper_data[index].year+', '+self.paper_data[index].pub+', '+self.paper_data[index].volume+', '+self.paper_data[index].page[0]
+                    paper_citations.append(citation_string)
+                    paper_titles.append(paper_title)
 
         self.paper_citations = paper_citations
         self.paper_titles = paper_titles
@@ -93,3 +102,4 @@ def create_citation_file(username, sort_by='year', authorship='first_author', fi
     author_obj = papers(username=username, sort_by=sort_by, authorship=authorship, filename=filename)
     author_obj.generate_citation()
     author_obj.write_citation()
+
