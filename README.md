@@ -23,7 +23,7 @@ This package uses the ads package (https://github.com/andycasey/ads) to perform 
 You’ll need an API key from NASA ADS labs. Sign up for the newest version of ADS search at https://ui.adsabs.harvard.edu, visit account settings and generate a new API token. The official documentation is available at https://github.com/adsabs/adsabs-dev-api
 When you get your API key, set the ads.config.token variable to your API key as shown below, and you are good to go!
 
-![alt text](https://github.com/cosmicoder/PaperCV/image.jpg?raw=true)
+![alt text](https://github.com/cosmicoder/PaperCV/img.jpg?raw=true)
 
 ## Examples
         
