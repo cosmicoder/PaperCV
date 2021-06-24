@@ -9,6 +9,7 @@ Get formatted citation for all first author and nth author papers by a given aut
 Upcoming features:
 1. Get total number of papers and citation count statistics.
 2. Increase the number of pages retrieved from ADS for longer list of papers. 
+3. Specify number of authors to print in the citations.
 
 ## Quick Start
 Install this package:
@@ -37,3 +38,5 @@ When you get your API key, set the ads.config.token variable to your API key as 
     
     # Example: Get all nth author papers sorted by year
     citation.create_citation_file(username, sort_by='year', authorship='nth_author', filename='citation_list.txt')
+  
+Known Issue: Similar names aren't differentiated. Presently, the user has to identify papers authored by researchers with a similar name as them in the output file.
