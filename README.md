@@ -9,6 +9,10 @@ Upcoming features:
 2. Increase the number of pages retrieved from ADS for longer list of papers. 
 
 ## Quick Start
+Install this package:
+   
+    pip install PaperCV
+    
 This package uses the ads package (https://github.com/andycasey/ads) to perform queries. Install this package:
 
     pip install ads
