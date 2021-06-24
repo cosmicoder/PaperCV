@@ -1,4 +1,5 @@
 import ads
+
 class papers:
     
     def __init__(self, username, sort_by='year', authorship='first_author', filename='citation_list.txt'):
@@ -36,7 +37,7 @@ class papers:
         paper_titles = []
 
         for index in range(len(self.paper_data)):
-            
+            flag=1
             citation_string = ''
             paper_title = self.paper_data[index].title[0]
             
@@ -44,6 +45,7 @@ class papers:
             self.paper_data[index].volume!=None and self.paper_data[index].page[0]!=None):
         
                 for i, author_name in enumerate(self.paper_data[index].author):
+                 
                     split_name = author_name.split(',')
 
                     if(len(split_name)==1):
@@ -55,10 +57,25 @@ class papers:
                         citation_string += split_name[0]+', '+split_last_name[1][0]+'. '+split_last_name[2][0]+'., '
                     else:
                         citation_string += split_name[0]+', '+split_last_name[1][0]+'., '
+                    if i==0:
+                        if self.authorship!= 'first_author':
+                            print(citation_string[0:len(citation_string)-2])
+                            print(self.username)
+                            if self.username == citation_string[0:len(citation_string)-2]:
+                                flag=0
+                                break
 
-                citation_string += self.paper_data[index].year+', '+self.paper_data[index].pub+', '+self.paper_data[index].volume+', '+self.paper_data[index].page[0]
-                paper_citations.append(citation_string)
-                paper_titles.append(paper_title)
+
+                """if(self.authorship != 'first_author'):
+                    if self.paper_data[index].author[0]==self.username:
+                        flag=0"""
+                        
+                if flag:
+
+                    citation_string += self.paper_data[index].year+', '+self.paper_data[index].pub+', '+self.paper_data[index].volume+', '+self.paper_data[index].page[0]
+                    paper_citations.append(citation_string)
+                    paper_titles.append(paper_title)
+               
 
         self.paper_citations = paper_citations
         self.paper_titles = paper_titles
@@ -75,6 +92,6 @@ class papers:
         cite_file.close()
 
 # Call to Functions -- Example
-author_obj = papers(username='Angelo, I.', sort_by='year', authorship='first_author')
+author_obj = papers(username='Blunt, S.', sort_by='year', authorship='nth_author')
 author_obj.generate_citation()
 author_obj.write_citation()
