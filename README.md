@@ -20,7 +20,7 @@ When you get your API key, set the ads.config.token variable to your API key as 
     from papercv import citation
     ads.config.token = 'my token' # Provide your ADS API Token
         
-    username = 'Sanghi, A.' # Your name in 'Last Name, First Initial.' format 
+    username = 'Sanghi, A.' # Your name in 'Last Name, First Name Initial. Middle Name Initial.' format (middle initial if applicable)
     
     # Example: Get all first author papers sorted by year
     citation.create_citation_file(username, sort_by='year', authorship='first_author', filename='citation_list.txt')
