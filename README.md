@@ -14,7 +14,7 @@ Upcoming features:
 ## Quick Start
 Install this package:
    
-    pip install PaperCV
+    pip install PaperCV==0.3
     
 This package uses the ads package (https://github.com/andycasey/ads) to perform queries. Install this package:
 
