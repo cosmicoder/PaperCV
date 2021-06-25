@@ -10,6 +10,7 @@ Upcoming features:
 1. Get total number of papers and citation count statistics.
 2. Increase the number of pages retrieved from ADS for longer list of papers. 
 3. Specify number of authors to print in the citations.
+4. Generate formatted text for input to LaTeX
 
 ## Quick Start
 Install this package:
