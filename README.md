@@ -4,7 +4,7 @@ A easy-to-use tool to generate references for your academic CV in astronomy.
 #### Credit: Organizers of Code/Astro for the brilliant workshop that has led to the building and releasing of our first python package!
 
 ## Features
-Get formatted citation for all first author and nth author papers by a given author.
+Get formatted citation for all first author and nth author papers by a given author. This pacakge queries using an author's unique ORCID ID. If you don't already have one, get one here and start claiming your papers - https://orcid.org.
 
 Upcoming features:
 1. Get total number of papers and citation count statistics.
@@ -31,16 +31,16 @@ When you get your API key, set the ads.config.token variable to your API key as 
     from papercv import citation
     ads.config.token = 'my token' # Provide your ADS API Token
         
+    # Your ORCID ID
+    orcid_id = '0000-0002-1838-4757'
+    
     # Your name in 'Last Name, First Name Initial. Middle Name Initial.' format (middle initial if applicable)
     username = 'Sanghi, A.' 
     
-    # Example: Get all first author papers sorted by year
-    citation.create_citation_file(username, sort_by='year', authorship='first_author', filename='citation_list.txt')
+    # Example: Get all first and nth author papers sorted by year
+    citation.create_citation_file(orcid_id, username, sort_by='year', filename='citation_list')
     
-    # Example: Get all first author papers sorted by citation count
-    citation.create_citation_file(username, sort_by='citation_count', authorship='first_author', filename='citation_list.txt')
-    
-    # Example: Get all nth author papers sorted by year
-    citation.create_citation_file(username, sort_by='year', authorship='nth_author', filename='citation_list.txt')
-  
-Known Issue: Similar names aren't differentiated. Presently, the user has to identify papers authored by researchers with a similar name as them in the output file.
+    # Example: Get all first and nth author papers sorted by citation count
+    citation.create_citation_file(orcid_id, username, sort_by='citation_count', filename='citation_list')
+   
+   
