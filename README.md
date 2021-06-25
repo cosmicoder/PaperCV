@@ -4,7 +4,7 @@ A easy-to-use tool to generate references for your academic CV in astronomy.
 #### Credit: Organizers of Code/Astro for the brilliant workshop that has led to the building and releasing of our first python package!
 
 ## Features
-Get formatted citation for all first author and nth author papers by a given author. This pacakge queries using an author's unique ORCID ID. If you don't already have one, get one here and start claiming your papers - https://orcid.org.
+Get formatted citation for all first author and nth author papers by a given author. This pacakge queries using an author's unique ORCID ID. If you don't already have one, get one here - https://orcid.org - and start claiming your papers on ADS.
 
 Upcoming features:
 1. Get total number of papers and citation count statistics.
