@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Citation &mdash; PaperCV 0.1 documentation</title>
+  <title>Citation &mdash; PaperCV 0.3 documentation</title>
   
 
   
@@ -157,20 +157,20 @@
 <span class="target" id="module-citation"></span><p>Class definition and Function to create citation file</p>
 <dl class="py function">
 <dt id="citation.create_citation_file">
-<code class="sig-prename descclassname"><span class="pre">citation.</span></code><code class="sig-name descname"><span class="pre">create_citation_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'year'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authorship</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'first_author'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'citation_list.txt'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#citation.create_citation_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">citation.</span></code><code class="sig-name descname"><span class="pre">create_citation_file</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orcid_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'year'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'citation_list'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#citation.create_citation_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Citation File Creation</p>
 <p>Generate .txt file with paper titles and citations for given author name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>orcid_id</strong> (<em>str</em>) – Author unique ORCID identifier - ORCID ID is used to search papers.</p></li>
 <li><p><strong>username</strong> (<em>str</em>) – Name of author in ‘Last Name, First Name/First Initial’ format. E.g. ‘Sanghi, Aniket’ or ‘Shah, N.’</p></li>
 <li><p><strong>sort_by</strong> (<em>str</em>) – Sort the papers queried by either ‘year’ or ‘citation_count’</p></li>
-<li><p><strong>authorship</strong> (<em>str</em>) – Select either ‘first_author’ papers or ‘nth_author’ papers.</p></li>
-<li><p><strong>filename</strong> (<em>str</em>) – Filename for the .txt file with paper titles and citations. E.g. ‘citation_list.txt’</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – Filename for the .txt file with paper titles and citations. E.g. ‘citation_list’</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>.txt file with paper titles and citations.</p>
+<dd class="field-even"><p>.txt file with first and nth author paper titles and citations.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>citation file</p>
